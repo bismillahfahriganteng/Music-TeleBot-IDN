@@ -25,7 +25,7 @@
 
 ### 💜 Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/fahrial2310/Music-TeleBot-IDN)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/bismillahfahriganteng/Music-TeleBot-IDN)
 
 Get pyrogram (p)  `SESSION` from here:
 
