@@ -46,6 +46,9 @@ def _start(client, message):
                         f"➕ Tambahkan {BOT_NAME} Ke Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
                 [
                     InlineKeyboardButton(
+                        f"➕ Tambahkan {ASSISSTANT_NAME} ke group ➕", url=f"https://t.me/{ASSISSTANT_NAME}?startgroup=true")],
+                [
+                    InlineKeyboardButton(
                         f"⚜️{mod}🔰", url=f"https://t.me/{owner}")
                 ],[
                     InlineKeyboardButton(
