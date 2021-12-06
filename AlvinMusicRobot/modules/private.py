@@ -22,6 +22,7 @@ from pyrogram.types import InlineKeyboardMarkup
 from pyrogram.types import InlineKeyboardButton
 from pyrogram.types import Message
 from AlvinMusicRobot.config import ASSISTANT_NAME
+from AlvinMusicRobot.config import ASSISSTANT_MODE as help_mode
 from AlvinMusicRobot.config import PROJECT_NAME
 from AlvinMusicRobot.config import SUPPORT_GRP
 from AlvinMusicRobot.config import SUPPORT_MODE
@@ -46,7 +47,7 @@ def _start(client, message):
                         f"➕ Tambahkan {BOT_NAME} Ke Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
                 [
                     InlineKeyboardButton(
-                        f"➕ Tambahkan {ASSISSTANT_NAME} ke group ➕", url=f"https://t.me/{ASSISSTANT_NAME}?startgroup=true")],
+                        f"🆘 Tambahkan {help_mode} ke group 🆘", url=f"https://t.me/{ASSISSTANT_NAME}?startgroup=true")],
                 [
                     InlineKeyboardButton(
                         f"⚜️{mod}🔰", url=f"https://t.me/{owner}")
