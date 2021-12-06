@@ -115,6 +115,8 @@ def map(pos):
         url = f"https://t.me/{SUPPORT_GRP}"
         button = [
             [InlineKeyboardButton(f"➕ Tambahkan {BOT_NAME} Ke Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+            [InlineKeyboardButton(f"🆘 Tambahkan {help_mode} Ke Group 🆘", url=f"https://t.me/{ASSISTANT_NAME}?startgroup=true")],
+            [InlineKeyboardButton(f"⚜️{mod}🔰", url=f"https://t.me/{owner}")],
             [InlineKeyboardButton(text = f'🔔 {UPDATES_MODE}', url=f"https://t.me/{UPDATES_CH}"),
              InlineKeyboardButton(text = f'📣 {SUPPORT_MODE}', url=f"https://t.me/{SUPPORT_GRP}")],
             [InlineKeyboardButton(text = '🔍 Source Code 🔎', url=f"https://{git}")],
