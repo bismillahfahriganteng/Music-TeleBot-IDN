@@ -869,7 +869,7 @@ async def ytplay(_, message: Message):
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
             ],
-            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
         ]
     )
     requested_by = message.from_user.first_name
