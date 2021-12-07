@@ -655,9 +655,9 @@ async def play(_, message: Message):
 
             while j < 6:
                 toxxt += f"{emojilist[j]} <b>Title - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})</b>\n"
-                toxxt += f" ⤷ <b>🕧 Duration</b> - [{results[j]['duration']}](https://youtube.com{results[j]['duration']})\n"
-                toxxt += f" ⤷ <b>🎥 Views</b> - [{results[j]['views']}](https://youtube.com{results[j]['views']})\n"
-                toxxt += f" ⤷ <b>🔍 Channel</b> - [{results[j]['channel']}](https://youtube.com{results[j]['channel']})\n\n"
+                toxxt += f" ⤷ <b>🕧 Duration</b> - {results[j]['duration']}\n"
+                toxxt += f" ⤷ <b>🎥 Views</b> - {results[j]['views']}\n"
+                toxxt += f" ⤷ <b>🔍 Channel</b> - {results[j]['channel']}\n\n"
 
                 j += 1            
             koyboard = InlineKeyboardMarkup(
