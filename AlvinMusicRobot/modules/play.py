@@ -27,7 +27,7 @@ from AlvinMusicRobot.config import DURATION_LIMIT
 from AlvinMusicRobot.config import UPDATES_CH
 from AlvinMusicRobot.config import UPDATES_MODE
 from AlvinMusicRobot.config import SUPPORT_GRP
-from AlvinMusicRobot.config import SUPPORT_MODE
+from AlvinMusicRobot.config import SUPPORT_MODE as mod
 from AlvinMusicRobot.config import que
 from AlvinMusicRobot.function.admins import admins as a
 from AlvinMusicRobot.helpers.admins import get_administrators
@@ -193,7 +193,7 @@ def r_ply(type_):
             ],
             [InlineKeyboardButton("❌ Close", "cls"),
             ],
-            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
+            [InlineKeyboardButton(text=f"📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
         ]
     )
     return mar
@@ -409,7 +409,7 @@ async def m_cb(b, cb):
                 ],
                 [InlineKeyboardButton("❌ Close", "cls"),
                 ],
-                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
+                [InlineKeyboardButton(text=f"📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
             ]
         )
         await cb.message.edit(stats, reply_markup=marr)
@@ -548,7 +548,7 @@ async def play(_, message: Message):
                 ],
                 [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
                 ],
-                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
+                [InlineKeyboardButton(text=f"📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
             ]
         )
         file_name = get_file_name(audio)
@@ -611,7 +611,7 @@ async def play(_, message: Message):
                 ],
                 [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
                 ],
-                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
+                [InlineKeyboardButton(text=f"📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
             ]
         )
         requested_by = message.from_user.first_name
@@ -626,21 +626,21 @@ async def play(_, message: Message):
         ydl_opts = {"format": "bestaudio/best"}
         
         try:
-          results = YoutubeSearch(query, max_results=6).to_dict()
+          results = YoutubeSearch(query, max_results=9).to_dict()
         except:
           await lel.edit("berikan saya sesuatu untuk memutar")
         # Looks like hell. Aren't it?? FUCK OFF
         try:
-            toxxt = "**pilih lagu yang ingin anda putar**\n\n"
+            toxxt = "**↓↓pilih lagu yang ingin anda putar↓↓**\n\n"
             j = 0
             useer=user_name
-            emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6⃣",]
+            emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6⃣","7⃣","8⃣","9⃣",]
 
-            while j < 6:
+            while j < 9:
                 toxxt += f"{emojilist[j]} <b>Title - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})</b>\n"
-                toxxt += f" ⤷ <b>🕧 Duration</b> - {results[j]['duration']}\n"
-                toxxt += f" ⤷ <b>🎥 Views</b> - {results[j]['views']}\n"
-                toxxt += f" ⤷ <b>🔍 Channel</b> - {results[j]['channel']}\n\n"
+                toxxt += f" ➥ <b>🕧 Duration</b> - {results[j]['duration']}\n"
+                toxxt += f" ➥ <b>🎥 Views</b> - {results[j]['views']}\n"
+                toxxt += f" ➥ <b>🔍 Channel</b> - {results[j]['channel']}\n\n"
 
                 j += 1            
             koyboard = InlineKeyboardMarkup(
@@ -655,9 +655,14 @@ async def play(_, message: Message):
                         InlineKeyboardButton("5️⃣", callback_data=f'plll 4|{query}|{user_id}'),
                         InlineKeyboardButton("6⃣", callback_data=f'plll 5|{query}|{user_id}'),
                     ],
+                    [
+                        InlineKeyboardButton("7⃣", callback_data=f'plll 6|{query}|{user_id}'),
+                        InlineKeyboardButton("8⃣", callback_data=f'plll 7|{query}|{user_id}'),
+                        InlineKeyboardButton("9⃣", callback_data=f'plll 8|{query}|{user_id}'),
+                    ],
                     [InlineKeyboardButton(text="❌", callback_data="cls"),
                     ],
-                    [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],  
+                    [InlineKeyboardButton(text=f"📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],  
                 ]
             )       
             await lel.edit(toxxt,reply_markup=koyboard,disable_web_page_preview=True)
@@ -709,7 +714,7 @@ async def play(_, message: Message):
                     ],
                     [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
                     ],
-                    [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
+                    [InlineKeyboardButton(text=f"📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
                 ]
             )
             requested_by = message.from_user.first_name
@@ -869,7 +874,7 @@ async def ytplay(_, message: Message):
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
             ],
-            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
+            [InlineKeyboardButton(text=f"📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
         ]
     )
     requested_by = message.from_user.first_name
@@ -1014,7 +1019,7 @@ async def jiosaavn(client: Client, message_: Message):
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
             ],
-            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
+            [InlineKeyboardButton(text=f"📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
         ]
     )
     file_path = await convert(wget.download(slink))
@@ -1124,7 +1129,7 @@ async def lol_cb(b, cb):
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
             ],
-            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
+            [InlineKeyboardButton(text=f"📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
         ]
     )
     requested_by = useer_name
