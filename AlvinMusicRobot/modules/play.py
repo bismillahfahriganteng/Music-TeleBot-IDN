@@ -43,6 +43,8 @@ from AlvinMusicRobot.config import BOT_NAME as bn
 from AlvinMusicRobot.config import DURATION_LIMIT
 from AlvinMusicRobot.config import UPDATES_CH
 from AlvinMusicRobot.config import UPDATES_MODE
+from AlvinMusicRobot.config import SUPPORT_GRP
+from AlvinMusicRobot.config import SUPPORT_MODE
 from AlvinMusicRobot.config import que
 from AlvinMusicRobot.function.admins import admins as a
 from AlvinMusicRobot.helpers.admins import get_administrators
@@ -206,7 +208,9 @@ def r_ply(type_):
             [
                 InlineKeyboardButton("Playlist 📖", "playlist"),
             ],
-            [InlineKeyboardButton("❌ Close", "cls")],
+            [InlineKeyboardButton("❌ Close", "cls"),
+            ],
+            [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
         ]
     )
     return mar
@@ -420,7 +424,9 @@ async def m_cb(b, cb):
                 [
                     InlineKeyboardButton("Playlist 📖", "playlist"),
                 ],
-                [InlineKeyboardButton("❌ Close", "cls")],
+                [InlineKeyboardButton("❌ Close", "cls"),
+                ],
+                [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
             ]
         )
         await cb.message.edit(stats, reply_markup=marr)
@@ -557,7 +563,9 @@ async def play(_, message: Message):
                     InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
                     InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
                 ],
-                [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+                [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
+                ],
+                [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
             ]
         )
         file_name = get_file_name(audio)
@@ -618,7 +626,9 @@ async def play(_, message: Message):
                     InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
                     InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
                 ],
-                [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+                [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
+                ],
+                [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
             ]
         )
         requested_by = message.from_user.first_name
@@ -633,7 +643,7 @@ async def play(_, message: Message):
         ydl_opts = {"format": "bestaudio/best"}
         
         try:
-          results = YoutubeSearch(query, max_results=5).to_dict()
+          results = YoutubeSearch(query, max_results=6).to_dict()
         except:
           await lel.edit("berikan saya sesuatu untuk memutar")
         # Looks like hell. Aren't it?? FUCK OFF
@@ -641,13 +651,13 @@ async def play(_, message: Message):
             toxxt = "**pilih lagu yang ingin anda putar**\n\n"
             j = 0
             useer=user_name
-            emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣",]
+            emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6⃣",]
 
-            while j < 5:
+            while j < 6:
                 toxxt += f"{emojilist[j]} <b>Title - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})</b>\n"
-                toxxt += f" ╚ <b>🕧 Duration</b> - {results[j]['duration']}\n"
-                toxxt += f" ╚ <b>🎥 Views</b> - {results[j]['views']}\n"
-                toxxt += f" ╚ <b>🔍 Channel</b> - {results[j]['channel']}\n\n"
+                toxxt += f" ⤷ <b>🕧 Duration</b> - [{results[j]['duration']}](https://youtube.com{results[j]['duration']})\n"
+                toxxt += f" ⤷ <b>🎥 Views</b> - [{results[j]['views']}](https://youtube.com{results[j]['views']})\n"
+                toxxt += f" ⤷ <b>🔍 Channel</b> - [{results[j]['channel']}](https://youtube.com{results[j]['channel']})\n\n"
 
                 j += 1            
             koyboard = InlineKeyboardMarkup(
@@ -660,8 +670,11 @@ async def play(_, message: Message):
                     [
                         InlineKeyboardButton("4️⃣", callback_data=f'plll 3|{query}|{user_id}'),
                         InlineKeyboardButton("5️⃣", callback_data=f'plll 4|{query}|{user_id}'),
+                        InlineKeyboardButton("6⃣", callback_data=f'plll 5|{query}|{user_id}'),
                     ],
-                    [InlineKeyboardButton(text="❌", callback_data="cls")],
+                    [InlineKeyboardButton(text="❌", callback_data="cls"),
+                    ],
+                    [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],  
                 ]
             )       
             await lel.edit(toxxt,reply_markup=koyboard,disable_web_page_preview=True)
@@ -711,7 +724,9 @@ async def play(_, message: Message):
                         InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
                         InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
                     ],
-                    [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+                    [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
+                    ],
+                    [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
                 ]
             )
             requested_by = message.from_user.first_name
@@ -869,7 +884,9 @@ async def ytplay(_, message: Message):
                 InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
                 InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
             ],
-            [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+            [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
+            ],
+            [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
         ]
     )
     requested_by = message.from_user.first_name
@@ -1012,7 +1029,9 @@ async def jiosaavn(client: Client, message_: Message):
                     text=f"{UPDATES_MODE}", url=f"https://t.me/{UPDATES_CH}"
                 )
             ],
-            [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+            [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
+            ],
+            [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
         ]
     )
     file_path = await convert(wget.download(slink))
@@ -1120,7 +1139,9 @@ async def lol_cb(b, cb):
                 InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
                 InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
             ],
-            [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+            [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
+            ],
+            [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
         ]
     )
     requested_by = useer_name
