@@ -1,20 +1,3 @@
-# AlvinMusicRobot (Telegram bot project)
-# Copyright (C) 2021  Inukaasith
-# Copyright (C) 2021  TheHamkerCat (Python_ARQ)
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-
 import json
 import os
 from os import path
@@ -210,7 +193,7 @@ def r_ply(type_):
             ],
             [InlineKeyboardButton("❌ Close", "cls"),
             ],
-            [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
         ]
     )
     return mar
@@ -426,7 +409,7 @@ async def m_cb(b, cb):
                 ],
                 [InlineKeyboardButton("❌ Close", "cls"),
                 ],
-                [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
             ]
         )
         await cb.message.edit(stats, reply_markup=marr)
@@ -565,12 +548,12 @@ async def play(_, message: Message):
                 ],
                 [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
                 ],
-                [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
             ]
         )
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/d19b68d228e2dc46eb8f5.jpg"
+        thumb_name = "https://telegra.ph/file/835ec872ee0aa9b8de348.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -628,7 +611,7 @@ async def play(_, message: Message):
                 ],
                 [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
                 ],
-                [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
             ]
         )
         requested_by = message.from_user.first_name
@@ -726,7 +709,7 @@ async def play(_, message: Message):
                     ],
                     [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
                     ],
-                    [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+                    [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
                 ]
             )
             requested_by = message.from_user.first_name
@@ -886,7 +869,7 @@ async def ytplay(_, message: Message):
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
             ],
-            [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
         ]
     )
     requested_by = message.from_user.first_name
@@ -1031,7 +1014,7 @@ async def jiosaavn(client: Client, message_: Message):
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
             ],
-            [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
         ]
     )
     file_path = await convert(wget.download(slink))
@@ -1141,7 +1124,7 @@ async def lol_cb(b, cb):
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
             ],
-            [InlineKeyboardButton(text="📣" {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
         ]
     )
     requested_by = useer_name
