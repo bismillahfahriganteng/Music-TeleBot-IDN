@@ -193,7 +193,7 @@ def r_ply(type_):
             ],
             [InlineKeyboardButton("❌ Close", "cls"),
             ],
-            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
         ]
     )
     return mar
@@ -409,7 +409,7 @@ async def m_cb(b, cb):
                 ],
                 [InlineKeyboardButton("❌ Close", "cls"),
                 ],
-                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
             ]
         )
         await cb.message.edit(stats, reply_markup=marr)
@@ -548,7 +548,7 @@ async def play(_, message: Message):
                 ],
                 [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
                 ],
-                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
             ]
         )
         file_name = get_file_name(audio)
@@ -611,7 +611,7 @@ async def play(_, message: Message):
                 ],
                 [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
                 ],
-                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+                [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
             ]
         )
         requested_by = message.from_user.first_name
@@ -657,7 +657,7 @@ async def play(_, message: Message):
                     ],
                     [InlineKeyboardButton(text="❌", callback_data="cls"),
                     ],
-                    [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],  
+                    [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],  
                 ]
             )       
             await lel.edit(toxxt,reply_markup=koyboard,disable_web_page_preview=True)
@@ -709,7 +709,7 @@ async def play(_, message: Message):
                     ],
                     [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
                     ],
-                    [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+                    [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
                 ]
             )
             requested_by = message.from_user.first_name
@@ -1014,7 +1014,7 @@ async def jiosaavn(client: Client, message_: Message):
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
             ],
-            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
         ]
     )
     file_path = await convert(wget.download(slink))
@@ -1124,7 +1124,7 @@ async def lol_cb(b, cb):
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls"),
             ],
-            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP})],
+            [InlineKeyboardButton(text="📣 {SUPPORT_MODE}", url=f"t.me/{SUPPORT_GRP}")],
         ]
     )
     requested_by = useer_name
