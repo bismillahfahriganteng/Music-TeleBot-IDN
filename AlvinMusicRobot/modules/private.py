@@ -38,7 +38,7 @@ def _start(client, message):
                 ],[
                     InlineKeyboardButton(
                         f"🔔 {UPDATES_MODE}", url=f"https://t.me/{UPDATES_CH}"), 
-                    InlineKeyboardButton(text = '🛠 Help', callback_data ="help"),
+                    InlineKeyboardButton(text = '🛠 Help', callback_data ="help_back"),
                     InlineKeyboardButton(
                         f"📣 {SUPPORT_MODE}", url=f"https://t.me/{SUPPORT_GRP}")
                 ],[
