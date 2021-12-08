@@ -51,7 +51,7 @@
     },
     "ASSISSTANT_MODE": {
       "description": "gunakan Helpers/Assistant.",
-      "value": "Helpers/Assisstant.",
+      "value": "Helpers/Assisstant",
       "required": false
     },
     "ARQ_API_KEY": {
